@@ -1,0 +1,31 @@
+@import "../../global.scss";
+
+.grid {
+    margin-top: 10%;
+    margin-bottom: 2%;
+
+    .cuadrado {
+        @include size(410px, 410px);
+        @include bc-color(white, grey);
+        margin: auto;
+        display: block;
+        border-radius: 5px;
+        text-align: center;
+
+        .title {
+            font-size: 30px;
+        }
+
+        .imagen {
+            @include size(300px, 300px);
+            @extend %filterTransition;
+            align-items: center;
+            margin: auto;
+            text-align: center;
+
+            &:hover {
+                @extend %filterImage;
+            }
+        }
+    }
+}

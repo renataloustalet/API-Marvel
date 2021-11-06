@@ -1,0 +1,62 @@
+@import "../../global.scss";
+
+.contenedor {
+    @include margin(auto, auto);
+    @include with-padding(60%, 50px);
+    @include bc-color($mainColor, $black);
+    @extend %borderRadius;
+    margin-bottom: 2%;
+
+    @include mobile {
+        @include with-padding(90%, 3%);
+        font-size: 95%;
+    }
+
+    .cajitaComics {
+        @include bc-color($contenedor, $black);
+        @include with-padding(80%, 1%);
+        @extend %borderRadius;
+        margin: auto;
+        text-align: start;
+
+        @include mobile {
+            padding-top: 2%;
+            padding-left: 2%;
+            width: 100%;
+        }
+
+        .list-group-item {
+            @include bc-color($contenedor, $black);
+
+            .comics {
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+
+                .comicButton {
+                    position: absolute;
+                    left: 97%;
+
+                    @include mobile {
+                        padding-top: 2%;
+                        padding-right: 2%;
+                        position: sticky;
+                        left: 90%;
+                    }
+                }
+            }
+        }
+    }
+
+    .bt {
+        @include bc-color(red, white);
+        @extend %borderRadius;
+        justify-content: center;
+        border: none;
+
+        &:active {
+            @include bc-color(white, red);
+        }
+    }
+
+}

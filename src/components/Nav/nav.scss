@@ -1,0 +1,30 @@
+@import "../../global.scss";
+
+.style {
+    margin-bottom: 2%;
+
+    a {
+        text-decoration: none;
+        color: $white;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    .menu {
+        color: white;
+    }
+
+    li {
+        @include mobile {
+            margin: 1%;
+        }
+    }
+
+    form {
+        @include mobile {
+            margin: 1%;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import "./global.scss";
+
+body {
+    background: linear-gradient(#aa0001, #aa0001, black, black);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+    width: 100%;
+
+    .App {
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        color: $mainColor;
+        font-size: 16pt;
+        font-family: "Komika Title - Kaps", arial;
+    }
+}

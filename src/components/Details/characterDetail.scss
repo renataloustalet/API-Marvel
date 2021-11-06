@@ -1,0 +1,38 @@
+@import "../../global.scss";
+
+.card {
+    @include bc-color($cardColor, grey);
+    @include with-padding(40%, 10px);
+    margin: auto;
+    border-radius: 5px;
+
+    @include mobile {
+        @include with-padding(80%, 20px);
+    }
+
+    .bt {
+        @include bc-color(grey, white);
+        @extend %borderRadius;
+        justify-content: right;
+        border: none;
+
+        &:active {
+            @include bc-color(white, grey);
+        }
+    }
+
+    .image {
+        @include size(400px, 400px);
+        @extend %filterTransition;
+        margin: auto;
+        padding-bottom: 5px;
+
+        &:hover {
+            @extend %filterImage;
+        }
+
+        @include mobile {
+            @include size(90%, 90%);
+        }
+    }
+}
