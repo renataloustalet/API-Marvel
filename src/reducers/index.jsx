@@ -1,7 +1,6 @@
 import {
     GET_BY_NAME,
     GET_CHARACTERS,
-    GET_COMICS,
     GET_DETAIL,
     ADD_FAVORITE,
     LOADING,
@@ -10,7 +9,6 @@ import {
 
 const initialState = {
     characters: [],
-    comic: [],
     detail: [],
     favorites: [],
     loading: false
@@ -22,11 +20,6 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 characters: action.payload
-            }
-        case GET_COMICS:
-            return {
-                ...state,
-                comic: action.payload
             }
         case GET_BY_NAME:
             return {
