@@ -21,7 +21,7 @@ function CharacterDetail(props) {
                     <div className="card">
                         <div>
                             <h1>{detail[0].name}</h1>
-                            <button onClick={() => props.addFavorite({ name: detail[0].name, id: detail[0].id, key: detail[0].id })} type="button" className="bt">♥</button>
+                            <button onClick={() => props.addFavorite({ name: detail[0].name, id: detail[0].id}, alert("Add favorite"))} type="button" className="bt">♥</button>
                         </div>
                         <hr></hr>
                         <img src={`${detail[0].thumbnail.path}.${detail[0].thumbnail.extension}`} className="image" alt="superhero" />

@@ -28,7 +28,7 @@ function FavoriteCharacters(props) {
                             </ul>
                         </div>
                     )
-                }) : <p>there is nothing yet</p>
+                }) : <p>there are nothing yet</p>
                 }
             </div>
         </div>
