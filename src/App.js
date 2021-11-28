@@ -1,17 +1,14 @@
-import { BrowserRouter } from 'react-router-dom';
-import './app.scss';
-import React from 'react'
-import { Route } from 'react-router-dom'
-import Home from './components/Home/Home'
-import CharacterDetail from './components/Details/CharacterDetail'
-import Nav from './components/Nav/Nav';
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './components/Home/Home';
+import CharacterDetail from './components/Details/CharacterDetail';
 import FavoriteCharacters from './components/FavoriteCharacters/FavoriteCharacters';
+import './app.scss';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav />
         <Route exact path="/" component={Home} />
         <Route exact path="/character/:id" component={CharacterDetail} />
         <Route exact path="/favoriteCharacters" component={FavoriteCharacters} />

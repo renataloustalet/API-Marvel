@@ -4,6 +4,7 @@ import {
     GET_DETAIL,
     ADD_FAVORITE,
     LOADING,
+    FAILURE,
     REMOVE_FAVORITE
 } from '../actions/constantes'
 
@@ -11,6 +12,7 @@ const initialState = {
     characters: [],
     detail: [],
     favorites: [],
+    error: "",
     loading: false
 }
 
@@ -19,12 +21,14 @@ function reducer(state = initialState, action) {
         case GET_CHARACTERS:
             return {
                 ...state,
+                error: "",
                 characters: action.payload
             }
         case GET_BY_NAME:
             return {
                 ...state,
-                characters: action.payload
+                characters: action.payload,
+                error: ""
             }
         case GET_DETAIL:
             return {
@@ -46,6 +50,11 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 loading: true
+            }
+        case FAILURE:
+            return{
+                ...state,
+                error: "Character not found"
             }
         default: return state;
     }

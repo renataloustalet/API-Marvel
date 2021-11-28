@@ -6,10 +6,12 @@
     @include bc-color($mainColor, $black);
     @extend %borderRadius;
     margin-bottom: 2%;
+    margin-top: 2%;
 
     @include mobile {
         @include with-padding(90%, 3%);
         font-size: 95%;
+        margin-top: 5%;
     }
 
     .cajitaComics {
@@ -17,6 +19,7 @@
         @include with-padding(80%, 1%);
         @extend %borderRadius;
         margin: auto;
+        margin-top: 25px;
         text-align: start;
 
         @include mobile {
@@ -49,14 +52,16 @@
     }
 
     .bt {
-        @include bc-color(red, white);
-        @extend %borderRadius;
+        @extend %buttonFavoriteCharacters;
         justify-content: center;
-        border: none;
-
-        &:active {
-            @include bc-color(white, red);
-        }
     }
 
+    .buttonBack {
+        @extend %buttonFavoriteCharacters;
+        padding: 5px;
+        float: left;
+        font-size: 80%;
+        text-decoration: none;
+
+    }
 }

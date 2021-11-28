@@ -4,6 +4,8 @@
     @include bc-color($cardColor, grey);
     @include with-padding(40%, 10px);
     margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
     border-radius: 5px;
 
     @include mobile {
@@ -34,5 +36,9 @@
         @include mobile {
             @include size(90%, 90%);
         }
+    }
+
+    .comicsDetail {
+        float: left;
     }
 }

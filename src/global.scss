@@ -20,6 +20,18 @@ $white: white;
     transition: filter 0.5s ease-in-out;
 }
 
+%buttonFavoriteCharacters {
+    background-color: red;
+    color: white;
+    @extend %borderRadius;
+    border: none;
+
+    &:active {
+        background-color: white;
+        color: red;
+    }
+}
+
 @mixin mobile {
     @media (max-width: ($width)) {
         @content;
@@ -45,3 +57,4 @@ $white: white;
     background-color: $background-color;
     color: $color;
 }
+

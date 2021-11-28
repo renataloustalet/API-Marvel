@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { getByName } from '../../actions/index'
+import { useDispatch, useSelector } from 'react-redux'
+import { getByName, getCharacters } from '../../actions/index'
 import './nav.scss'
 
 function Nav() {
 
     const dispatch = useDispatch()
+    const error = useSelector(state => state.error)
     const [name, setName] = useState('')
 
     function handleSubmit(e) {
@@ -19,13 +20,16 @@ function Nav() {
         setName(e.target.value)
     }
 
+    function handleClick(){
+        dispatch(getCharacters())
+    }
 
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-dark style">
                 <div class="container">
-                    <Link to="/" >
-                        <img src="/images/logo-marvel.png" height="50px" alt="logo-marvel" />
+                    <Link to='/'>
+                        <img src="/images/logo-marvel.png" height="50px" alt="logo-marvel" onClick={handleClick}/>
                     </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="menu"><i class="fa fa-bars"></i></span>
@@ -47,6 +51,7 @@ function Nav() {
                     </div>
                 </div>
             </nav>
+            {error !== "" && <p>{error}</p>}
         </div>
     )
 }

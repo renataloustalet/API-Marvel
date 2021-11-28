@@ -29,3 +29,31 @@
         }
     }
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    ul {
+        padding: 0;
+        color: white;
+
+        li {
+            display: inline;
+            padding: 10px;
+
+            a {
+                @include bc-color($colorLinkPagination, white);
+                padding: 8px 16px;
+                border-radius: 3px;
+                margin: 0 4px;
+
+                &:hover:not(.active) {
+                    @include bc-color($backgroundPagination, black);
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}

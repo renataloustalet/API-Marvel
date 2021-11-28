@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector, connect } from 'react-redux'
 import './favoriteCharacters.scss'
 import { removeFavorite } from '../../actions'
+import { Link } from 'react-router-dom'
 
 function FavoriteCharacters(props) {
 
@@ -12,7 +13,10 @@ function FavoriteCharacters(props) {
     return (
         <div>
             <div className="contenedor">
-                <h1>My favorite characters</h1>
+                <div>
+                    <Link to='/' className="buttonBack">&#171;</Link>
+                    <h1>My favorite characters</h1>
+                </div>
                 {filtrarRepetidos.length > 0 ? filtrarRepetidos.map(c => {
                     return (
                         <div className="cajitaComics">
