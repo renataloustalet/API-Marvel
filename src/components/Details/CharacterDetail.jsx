@@ -14,28 +14,29 @@ function CharacterDetail(props) {
         dispatch(getDetail(props.match.params.id))
     }, [])
 
-
     return (
         <div>
-            <div className="container">
-                {loading ? <h2>loading...</h2> : detail.length > 0 ?
-                    <div className="card">
-                        <div>
-                            <Link to='/'>&#171;</Link>
+            {loading ? <h2>loading...</h2> : detail.length > 0 ?
+                <div className="card">
+                    <div className="row align-items-center">
+                        <div className="col-md-4">
                             <h1>{detail[0].name}</h1>
-                            <button onClick={() => props.addFavorite({ name: detail[0].name, id: detail[0].id }, alert("Add favorite"))} type="button" className="bt">♥</button>
+                            <img src={`${detail[0].thumbnail.path}.${detail[0].thumbnail.extension}`} alt="superhero" />
                         </div>
-                        <hr></hr>
-                        <div>
-                            <img src={`${detail[0].thumbnail.path}.${detail[0].thumbnail.extension}`} className="image" alt="superhero" />
+                        <div className="col-md-8">
+                            <div className="card-body">
+                                <h4>Comics</h4>
+                                <hr></hr>
+                                <p>{detail[0].comics.length > 0 ? detail[0].comics : <p>Comics not found</p>}</p>
+                            </div>
+                            <div>
+                                <Link to='/' className="back">Back</Link>
+                                <button onClick={() => props.addFavorite({ name: detail[0].name, id: detail[0].id }, alert("Add favorite"))} type="button">Add favorite</button>
+                            </div>
                         </div>
-                        <div className="comicsDetail">
-                            <hr></hr>
-                            <h4>{detail[0].comics.length > 0 ? detail[0].comics : <p>Comics not found</p>}</h4>
-                        </div>
-                    </div> : <h2>Character not found</h2>
-                }
-            </div>
+                    </div>
+                </div> : <h2>Character not found</h2>
+            }
         </div>
     )
 }

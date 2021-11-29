@@ -11,23 +11,22 @@ function renderData(data) {
             <Nav />
             <div className="container">
                 <div className="row">
-                    {data?.map(e => {
+                    {data.length > 0 ? data?.map(e => {
                         return (
                             <div key={e.id} className="col grid">
                                 <div className="cuadrado">
-                                    <p className="title">{e.name}</p>
+                                    <p>{e.name}</p>
                                     <Link to={"/character/" + e.id}>
-                                        <img alt="superhero" src={`${e.thumbnail.path}.${e.thumbnail.extension}`} className="imagen" />
+                                        <img alt="superhero" src={`${e.thumbnail.path}.${e.thumbnail.extension}`} />
                                     </Link>
                                 </div>
                             </div>
                         )
-                    })}
+                    }) : <h2>loading...</h2>}
                 </div>
             </div>
         </div>
     )
-
 };
 
 function Home() {
@@ -108,23 +107,9 @@ function Home() {
             {renderData(currentItems)}
             <div className="pagination">
                 <ul>
-                    <li>
-                        <a
-                            onClick={handlePrevbtn}
-                            disabled={currentPage === pages[0] ? true : false}>
-                            &#171;
-                        </a>
-                    </li>
                     {pageDecrementBtn}
                     {renderPageNumbers}
                     {pageIncrementBtn}
-                    <li>
-                        <a
-                            onClick={handleNextbtn}
-                            disabled={currentPage === pages[pages.length - 1] ? true : false}>
-                            &#187;
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>

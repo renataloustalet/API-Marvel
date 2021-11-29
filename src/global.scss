@@ -32,6 +32,25 @@ $white: white;
     }
 }
 
+%buttonDetail {
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 12%;
+    height: 10%;
+
+    &:active {
+        background-color: white;
+        color: grey;
+    }
+}
+
+%margin-MarginBottom {
+    margin: auto;
+    margin-bottom: 2%;
+}
+
 @mixin mobile {
     @media (max-width: ($width)) {
         @content;
@@ -57,4 +76,3 @@ $white: white;
     background-color: $background-color;
     color: $color;
 }
-

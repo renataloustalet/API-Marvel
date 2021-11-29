@@ -21,14 +21,13 @@ function reducer(state = initialState, action) {
         case GET_CHARACTERS:
             return {
                 ...state,
-                error: "",
+                loading: false,
                 characters: action.payload
             }
         case GET_BY_NAME:
             return {
                 ...state,
-                characters: action.payload,
-                error: ""
+                characters: action.payload
             }
         case GET_DETAIL:
             return {

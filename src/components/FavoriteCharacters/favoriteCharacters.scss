@@ -8,6 +8,10 @@
     margin-bottom: 2%;
     margin-top: 2%;
 
+    h1 {
+        margin-bottom: 2%;
+    }
+
     @include mobile {
         @include with-padding(90%, 3%);
         font-size: 95%;
@@ -19,7 +23,6 @@
         @include with-padding(80%, 1%);
         @extend %borderRadius;
         margin: auto;
-        margin-top: 25px;
         text-align: start;
 
         @include mobile {
@@ -28,7 +31,7 @@
             width: 100%;
         }
 
-        .list-group-item {
+        li {
             @include bc-color($contenedor, $black);
 
             .comics {
@@ -39,6 +42,11 @@
                 .comicButton {
                     position: absolute;
                     left: 97%;
+
+                    button {
+                        @extend %buttonFavoriteCharacters;
+                        justify-content: center;
+                    }
 
                     @include mobile {
                         padding-top: 2%;
@@ -51,17 +59,14 @@
         }
     }
 
-    .bt {
-        @extend %buttonFavoriteCharacters;
-        justify-content: center;
-    }
-
-    .buttonBack {
-        @extend %buttonFavoriteCharacters;
-        padding: 5px;
-        float: left;
-        font-size: 80%;
-        text-decoration: none;
-
+    .divLink {
+        margin-top: 2%;
+        .linkBack {
+            @extend %buttonFavoriteCharacters;
+            padding: 5px;
+            float: center;
+            font-size: 80%;
+            text-decoration: none;
+        }
     }
 }

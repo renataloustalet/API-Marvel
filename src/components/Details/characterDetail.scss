@@ -1,33 +1,44 @@
 @import "../../global.scss";
 
+h2 {
+    padding: 80px;
+}
+
 .card {
     @include bc-color($cardColor, grey);
-    @include with-padding(40%, 10px);
-    margin: auto;
+    @include with-padding(90%, 10px);
+    @extend %margin-MarginBottom;
+    @extend %borderRadius;
     margin-top: 2%;
-    margin-bottom: 2%;
-    border-radius: 5px;
 
     @include mobile {
         @include with-padding(80%, 20px);
     }
 
-    .bt {
-        @include bc-color(grey, white);
-        @extend %borderRadius;
-        justify-content: right;
-        border: none;
+    button {
+        @extend %buttonDetail;
 
-        &:active {
-            @include bc-color(white, grey);
+        @include mobile {
+            width: 40%;
         }
     }
 
-    .image {
+    .back {
+        @extend %buttonDetail;
+        margin-right: 2%;
+        padding-right: 9px;
+        padding-left: 9px;
+        padding-top: 1px;
+        padding-bottom: 2px;
+        text-decoration: none;
+    }
+
+    img {
         @include size(400px, 400px);
         @extend %filterTransition;
-        margin: auto;
-        padding-bottom: 5px;
+        @extend %margin-MarginBottom;
+        padding: 2%;
+        border: 1px solid rgb(175, 167, 167);
 
         &:hover {
             @extend %filterImage;
@@ -36,9 +47,5 @@
         @include mobile {
             @include size(90%, 90%);
         }
-    }
-
-    .comicsDetail {
-        float: left;
     }
 }

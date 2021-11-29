@@ -14,7 +14,6 @@ function FavoriteCharacters(props) {
         <div>
             <div className="contenedor">
                 <div>
-                    <Link to='/' className="buttonBack">&#171;</Link>
                     <h1>My favorite characters</h1>
                 </div>
                 {filtrarRepetidos.length > 0 ? filtrarRepetidos.map(c => {
@@ -24,8 +23,8 @@ function FavoriteCharacters(props) {
                                 <li className="list-group-item">
                                     <div className="comics">
                                         {c}
-                                        <div className="d-md-flex comicButton" >
-                                            <button onClick={() => props.removeFavorite(c)} className="bt" type="button">X</button>
+                                        <div className="d-md-flex comicButton">
+                                            <button onClick={() => props.removeFavorite(c)} type="button">X</button>
                                         </div>
                                     </div>
                                 </li>
@@ -34,6 +33,9 @@ function FavoriteCharacters(props) {
                     )
                 }) : <p>there are nothing yet</p>
                 }
+                <div className="divLink">
+                    <Link to='/' className="linkBack">Back</Link>
+                </div>
             </div>
         </div>
     )
