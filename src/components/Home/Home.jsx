@@ -6,6 +6,7 @@ import Nav from '../Nav/Nav'
 import './home.scss'
 
 function renderData(data) {
+
     return (
         <div>
             <Nav />

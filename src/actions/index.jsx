@@ -46,9 +46,9 @@ export function getByName(name) {
             })
 
         } catch (error) {
-            return dispatch({
+            dispatch({
                 type: FAILURE,
-                payload: error
+                error
             })
         }
     }
@@ -57,6 +57,9 @@ export function getByName(name) {
 export function getDetail(id) {
     return async function (dispatch) {
         try {
+            dispatch({
+                type: LOADING
+            })
             const res = await axios.get(`https://${REACT_APP_URL}/${id}?apikey=${process.env.REACT_APP_API_KEY}&hash=${process.env.REACT_APP_HASH}`);
             return dispatch({
                 type: GET_DETAIL,
