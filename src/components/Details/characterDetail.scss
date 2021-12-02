@@ -6,10 +6,10 @@ h2 {
 
 .card {
     @include bc-color($cardColor, grey);
-    @include with-padding(90%, 10px);
+    @include with-padding(90%, 90px);
     @extend %margin-MarginBottom;
     @extend %borderRadius;
-    margin-top: 2%;
+    margin-top: 6%;
 
     @include mobile {
         @include with-padding(80%, 20px);

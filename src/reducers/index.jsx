@@ -53,7 +53,7 @@ function reducer(state = initialState, action) {
         case FAILURE:
             return{
                 ...state,
-                error:"not found"
+                error: action.payload
             }
         default: return state;
     }

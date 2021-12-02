@@ -17,6 +17,7 @@ function CharacterDetail(props) {
     return (
         <div>
             {loading ? <h2>loading...</h2> : detail.length > 0 ?
+            <div>
                 <div className="card">
                     <div className="row align-items-center">
                         <div className="col-md-4">
@@ -34,6 +35,7 @@ function CharacterDetail(props) {
                                 <button onClick={() => props.addFavorite({ name: detail[0].name, id: detail[0].id }, alert("Add favorite"))} type="button">Add favorite</button>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div> : <h2>Character not found</h2>
             }

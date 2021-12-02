@@ -29,12 +29,12 @@ function Nav() {
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-dark style">
-                <div class="container">
+                <div className="container">
                     <Link to='/'>
                         <img src="/images/logo-marvel.png" height="50px" alt="logo-marvel" onClick={handleClick}/>
                     </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                        <span><i class="fa fa-bars"></i></span>
+                        <span><i className="fa fa-bars"></i></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul className="navbar-nav mx-auto">
