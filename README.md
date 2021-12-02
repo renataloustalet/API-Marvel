@@ -4,9 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Previews
 
+<img src="./Home.png" />
 
+<img src="./Details.png"/>
 
-### `npm test`
+<img src="./Search.png"/>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<img src="./FavoriteCharacters.png"/>
 
