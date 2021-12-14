@@ -1,5 +1,11 @@
 # Marvel React App
 
+## Tecnologías utilizadas
+
+* Javascript
+* React - Redux
+* Bootstrap
+
 ## Previews
 
 <img src="./Home.png" />
