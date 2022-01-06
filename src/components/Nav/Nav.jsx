@@ -1,25 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { getByName, getCharacters } from '../../actions/index'
 import './nav.scss'
 
 function Nav() {
 
     const dispatch = useDispatch()
-    const error = useSelector(state => state.error)
-    const [name, setName] = useState('')
-
-    console.log(error)
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        dispatch(getByName(name))
-        setName('')
-    }
 
     function handleChange(e) {
-        setName(e.target.value)
+        dispatch(getByName(e.target.value))
     }
 
     function handleClick(){
@@ -46,14 +36,12 @@ function Nav() {
                         </ul>
                         <form className="d-flex">
                             <div className="input-group">
-                                <input className="form-control me-2" type="search" value={name} placeholder="Character name..." onChange={handleChange} />
-                                <button className="btn btn-outline-success" type="submit" onClick={handleSubmit}>Search</button>
+                                <input className="form-control me-2" type="search" placeholder="Character name..." onChange={handleChange} />
                             </div>
                         </form>
                     </div>
                 </div>
             </nav>
-            {error !== "" && <p>{error}</p>}
         </div>
     )
 }

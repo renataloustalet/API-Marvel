@@ -6,8 +6,7 @@ import {
     GET_DETAIL,
     ADD_FAVORITE,
     REMOVE_FAVORITE,
-    LOADING,
-    FAILURE
+    LOADING
 } from './constantes'
 
 const REACT_APP_URL = 'gateway.marvel.com:443/v1/public/characters'
@@ -46,12 +45,8 @@ export function getByName(name) {
                 type: GET_BY_NAME,
                 payload: res.data.data.results
             })
-
         } catch (error) {
-            dispatch({
-                type: FAILURE,
-                payload: 'not found'
-            })
+            console.log(error)
         }
     }
 }
