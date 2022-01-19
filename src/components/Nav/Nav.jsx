@@ -21,7 +21,7 @@ function Nav() {
             <nav className="navbar navbar-expand-lg bg-dark style">
                 <div className="container">
                     <Link to='/'>
-                        <img src="/images/logo-marvel.png" height="50px" alt="logo-marvel" onClick={handleClick}/>
+                        <img src="/marvel/images/logo-marvel.png" height="50px" alt="logo-marvel" onClick={handleClick}/>
                     </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                         <span><i className="fa fa-bars"></i></span>

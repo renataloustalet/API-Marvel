@@ -1,14 +1,12 @@
 @import "../../global.scss";
 
 .grid {
-    margin-top: 10%;
-    margin-bottom: 2%;
+    margin-bottom: 25px;
 
     .cuadrado {
         @include size(410px, 410px);
         @include bc-color(white, grey);
         margin: auto;
-        display: block;
         border-radius: 5px;
         text-align: center;
 
@@ -52,6 +50,10 @@
             &:hover:not(.active) {
                 @include bc-color($backgroundPagination, black);
                 transition: 0.3s;
+            }
+
+            &.active {
+                @include bc-color($backgroundPagination, black);
             }
         
         }

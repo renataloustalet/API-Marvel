@@ -31,7 +31,7 @@ function FavoriteCharacters(props) {
                             </ul>
                         </div>
                     )
-                }) : <p>there are nothing yet</p>
+                }) : <p>there is nothing yet</p>
                 }
                 <div className="divLink">
                     <Link to='/' className="linkBack">Back</Link>

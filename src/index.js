@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="/marvel">
         <App />
       </BrowserRouter>
     </Provider>

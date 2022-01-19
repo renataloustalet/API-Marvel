@@ -38,7 +38,7 @@ export function getCharacters() {
 export function getByName(name) {
     return async function (dispatch) {
         try {
-            const res = await axios.get(`https://${REACT_APP_URL}?apikey=${process.env.REACT_APP_API_KEY}&hash=${process.env.REACT_APP_HASH}&nameStartsWith=${name}`);
+            const res = await axios.get(`https://${REACT_APP_URL}?apikey=${process.env.REACT_APP_API_KEY}&hash=${process.env.REACT_APP_HASH}&nameStartsWith=${name}&ts=1`);
             console.log(res)
             console.log(res.config)
             return dispatch({
@@ -57,7 +57,7 @@ export function getDetail(id) {
             dispatch({
                 type: LOADING
             })
-            const res = await axios.get(`https://${REACT_APP_URL}/${id}?apikey=${process.env.REACT_APP_API_KEY}&hash=${process.env.REACT_APP_HASH}`);
+            const res = await axios.get(`https://${REACT_APP_URL}/${id}?apikey=${process.env.REACT_APP_API_KEY}&hash=${process.env.REACT_APP_HASH}&ts=1`);
             return dispatch({
                 type: GET_DETAIL,
                 payload: res.data.data.results.map(e => {
