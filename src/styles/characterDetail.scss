@@ -1,0 +1,65 @@
+@import "../sass/global.scss";
+@import "../sass/variables.scss";
+
+h2 {
+    padding: 200px;
+}
+
+.characterDetail {
+    .loading {
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 20%;
+        width: 140px;
+    }
+    
+    .card {
+        @include bc-color($cardColor, $grey);
+        @include with-padding(90%, 90px);
+        @extend %margin-MarginBottom;
+        @extend %borderRadius;
+        margin-top: 6%;
+
+        @media screen and (max-width: 700px) {
+            @include with-padding(80%, 20px);
+        }
+
+        @media screen and (min-width: 700px) and (max-width: 1500px) {
+            @include with-padding(95%, 20px);
+        }
+
+       button {
+             @extend %buttonDetail;
+             margin: 10px;
+
+            @media screen and (max-width: 700px) {
+                width: 40%;
+                margin: 10px;
+            }
+
+            @media screen and (min-width: 700px) and (max-width: 1500px) {
+                @include with-padding(20%, 1px);
+            }
+         }
+
+        img {
+            @include size(400px, 400px);
+            @extend %filterTransition;
+            @extend %margin-MarginBottom;
+            padding: 2%;
+            border: 1px solid rgb(175, 167, 167);
+
+            &:hover {
+                @extend %filterImage;
+            }
+
+            @media screen and (max-width: 700px) {
+                @include size(90%, 90%);
+            }
+
+            @media screen and (min-width: 700px) and (max-width: 1500px) {
+                @include size(80%, 90%);
+            }
+        }
+    }
+}

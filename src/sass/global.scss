@@ -1,11 +1,4 @@
-$mainColor: #ffb401;
-$backgroundPagination: #aa0000b2;
-$width: 700px;
-$colorLinkPagination: #aa0001;
-$cardColor: #f2f2f2;
-$black: #303336;
-$contenedor: rgba(255, 255, 255, 0.13);
-$white: white;
+@import "./variables.scss";
 
 %borderRadius {
     border-radius: 5px;
@@ -37,8 +30,8 @@ $white: white;
     color: white;
     border-radius: 5px;
     border: none;
-    width: 12%;
-    height: 10%;
+    /* width: 12%;
+    height: 10%; */
 
     &:active {
         background-color: white;
@@ -75,4 +68,11 @@ $white: white;
 @mixin bc-color($background-color, $color) {
     background-color: $background-color;
     color: $color;
+}
+
+@mixin flex($align-items, $justify-content, $flex-direction) {
+    display: flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    flex-direction: $flex-direction;
 }

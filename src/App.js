@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Home from './components/Home/Home';
-import CharacterDetail from './components/Details/CharacterDetail';
-import FavoriteCharacters from './components/FavoriteCharacters/FavoriteCharacters';
+import Home from './components/Home';
+import CharacterDetail from './components/CharacterDetail';
+import FavoriteCharacters from './components/FavoriteCharacters';
 import './app.scss';
 
 function App() {

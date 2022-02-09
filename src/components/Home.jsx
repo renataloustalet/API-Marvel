@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getCharacters } from '../../actions/index'
+import { getCharacters } from '../actions/index'
 import { Link } from 'react-router-dom'
-import Nav from '../Nav/Nav'
-import './home.scss'
+import loading from '../assets/loading.png'
+import Nav from './Nav'
+import '../styles/home.scss'
 
 function renderData(data) {
 
@@ -18,12 +19,12 @@ function renderData(data) {
                                 <div className="cuadrado">
                                     <p>{e.name}</p>
                                     <Link to={"/character/" + e.id}>
-                                        <img alt="superhero" src={`${e.thumbnail.path}.${e.thumbnail.extension}`} />
+                                        <img alt="superhero" src={`${e.thumbnail.path}.${e.thumbnail.extension}`} className='superhero' />
                                     </Link>
                                 </div>
                             </div>
                         )
-                    }) : <h2>loading...</h2>}
+                    }) : <img src={loading} className='loading' />}
                 </div>
             </div>
         </div>
@@ -95,12 +96,12 @@ function Home() {
 
     let pageIncrementBtn = null;
     if (pages.length > maxPageNumberLimit) {
-        pageIncrementBtn = <li onClick={handleNextbtn}> &hellip; </li>;
+        pageIncrementBtn = <li onClick={handleNextbtn}> &gt; </li>;
     }
 
     let pageDecrementBtn = null;
     if (minPageNumberLimit >= 1) {
-        pageDecrementBtn = <li onClick={handlePrevbtn}> &hellip; </li>;
+        pageDecrementBtn = <li onClick={handlePrevbtn}> &lt; </li>;
     }
 
     return (

@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch} from 'react-redux'
-import { getByName, getCharacters } from '../../actions/index'
-import './nav.scss'
+import { getByName, getCharacters } from '../actions/index'
+import logo from '../assets/logo-marvel.png'
+import '../styles/nav.scss'
 
 function Nav() {
 
@@ -21,7 +22,7 @@ function Nav() {
             <nav className="navbar navbar-expand-lg bg-dark style">
                 <div className="container">
                     <Link to='/'>
-                        <img src="/marvel/images/logo-marvel.png" height="50px" alt="logo-marvel" onClick={handleClick}/>
+                        <img src={logo} height="50px" alt="logo-marvel" onClick={handleClick}/>
                     </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                         <span><i className="fa fa-bars"></i></span>

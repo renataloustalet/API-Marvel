@@ -1,12 +1,12 @@
-@import "./global.scss";
+@import "./sass/global.scss";
+@import "./sass/variables.scss";
 
 body {
-    background: linear-gradient(#aa0001, #aa0001, black, black);
+    background: linear-gradient(#aa0001, #aa0001, $black, $black);
     background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 100%;
-    width: 100%;
 
     .App {
         text-align: center;
@@ -14,6 +14,12 @@ body {
         width: 100%;
         color: $mainColor;
         font-size: 16pt;
-        font-family: "Komika Title - Kaps", arial;
+        font-family: "komika Title - Kaps", arial;
+        overflow-x: hidden;
     }
+}
+
+@font-face {
+    font-family: "komika Title - Kaps";
+    src: url("../src/fonts/KOMTITK_.ttf") format("TrueType");
 }

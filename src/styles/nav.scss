@@ -1,4 +1,4 @@
-@import "../../global.scss";
+@import "../sass/global.scss";
 
 .style {
     margin-bottom: 2%;
@@ -13,7 +13,7 @@
     }
 
     span {
-        color: white;
+        color: $white;
     }
 
     li {

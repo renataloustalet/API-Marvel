@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store/index'
 import 'bootstrap/dist/css/bootstrap.css'
+import './fonts/KOMTITA_.ttf';
 
 ReactDOM.render(
   <React.StrictMode>
