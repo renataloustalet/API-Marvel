@@ -4,9 +4,8 @@ import { addFavorite, getDetail } from '../actions/index'
 import { Link, useHistory } from 'react-router-dom'
 import loadingImg from '../assets/loading.png'
 import notFound from '../assets/notFound.png'
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 import '../styles/characterDetail.scss'
+import Swal from 'sweetalert2'
 
 function CharacterDetail(props) {
 
@@ -14,6 +13,7 @@ function CharacterDetail(props) {
     const history = useHistory();
     const detail = useSelector(state => state.detail)
     const loading = useSelector(state => state.loading)
+
     const backHome = () => {
         history.push('/')
     }
@@ -40,17 +40,17 @@ function CharacterDetail(props) {
                                 </div>
                                 <div>
                                     <button onClick={backHome} className="back">Back</button>
-                                    <button onClick={() => props.addFavorite({ name: detail[0].name, id: detail[0].id }, alert("add favorite"))} type="button">Add favorite</button>
+                                    <button onClick={() => props.addFavorite({ name: detail[0].name, id: detail[0].id }, Swal.fire({ title: "Added to favorites successfully", confirmButtonColor: 'grey' }))} type="button">Add favorite</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div> :
-                !loading && detail.length < 0 ? 
-                <div>
-                    <img src={notFound} />
-                    <button>Back</button>
-                </div> : <img src={loadingImg} className='loading' />
+                !loading && detail.length < 0 ?
+                    <div>
+                        <img src={notFound} />
+                        <button>Back</button>
+                    </div> : <img src={loadingImg} className='loading' />
             }
         </div>
     )
