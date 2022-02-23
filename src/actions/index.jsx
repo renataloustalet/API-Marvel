@@ -39,8 +39,6 @@ export function getByName(name) {
     return async function (dispatch) {
         try {
             const res = await axios.get(`https://${REACT_APP_URL}?apikey=${process.env.REACT_APP_API_KEY}&hash=${process.env.REACT_APP_HASH}&nameStartsWith=${name}&ts=1`);
-            console.log(res)
-            console.log(res.config)
             return dispatch({
                 type: GET_BY_NAME,
                 payload: res.data.data.results
