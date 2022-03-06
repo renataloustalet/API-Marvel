@@ -3,14 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getCharacters } from '../actions/index'
 import { Link } from 'react-router-dom'
 import loading from '../assets/loading.png'
-import Nav from './Nav'
 import '../styles/home.scss'
 
 function renderData(data) {
-
     return (
         <div>
-            <Nav />
             <div className="container">
                 <div className="row">
                     {data.length > 0 ? data?.map(e => {
@@ -24,7 +21,7 @@ function renderData(data) {
                                 </div>
                             </div>
                         )
-                    }) : <img src={loading} className='loading' />}
+                    }) : <img src={loading} className='loading' alt='loading' />}
                 </div>
             </div>
         </div>

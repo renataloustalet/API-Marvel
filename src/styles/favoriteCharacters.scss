@@ -2,75 +2,97 @@
 @import "../sass/variables.scss";
 
 .favoriteCharacters {
-    height: 100vh;
-.contenedor {
-    @include margin(auto, auto);
-    @include with-padding(60%, 50px);
-    @include bc-color($mainColor, $black);
-    @extend %borderRadius;
-    margin-bottom: 2%;
-    margin-top: 2%;
-
-    h1 {
-        margin-bottom: 2%;
-    }
-
-    @include mobile {
-        @include with-padding(90%, 3%);
-        font-size: 95%;
-        margin-top: 5%;
-    }
-
-    .cajitaComics {
-        @include bc-color($contenedor, $black);
-        @include with-padding(80%, 1%);
+    .contenedor {
+        @include with-padding(60%, 50px);
+        @include bc-color($yellow, $black);
         @extend %borderRadius;
         margin: auto;
-        text-align: start;
 
-        @media screen and (max-width: 700px) {
-            padding-top: 2%;
-            padding-left: 2%;
-            width: 100%;
+        h1 {
+            margin-bottom: 2%;
         }
 
-        li {
-            @include bc-color($contenedor, $black);
+        .cajitaComics {
+            @include bc-color($darkGrey, $black);
+            @include with-padding(80%, 1%);
+            @extend %borderRadius;
+            margin: auto;
+            text-align: start;
 
-            .comics {
-                display: flex;
-                flex-wrap: wrap;
-                position: relative;
+            li {
+                @include bc-color($darkGrey, $black);
 
-                .comicButton {
-                    position: absolute;
-                    left: 97%;
+                .comics {
+                    display: flex;
+                    flex-wrap: wrap;
+                    position: relative;
 
-                    button {
-                        @extend %buttonFavoriteCharacters;
-                        justify-content: center;
+                    .comicButton {
+                        position: absolute;
+                        left: 97%;
+
+                        button {
+                            @extend %buttonFavoriteCharacters;
+                            justify-content: center;
+                        }
                     }
+                }
+            }
+        }
 
-                    @media screen and (max-width: 700px) {
-                        padding-top: 2%;
-                        padding-right: 2%;
-                        position: sticky;
-                        left: 90%;
+        .divLink {
+            margin-top: 2%;
+            .linkBack {
+                @extend %buttonFavoriteCharacters;
+                padding: 5px;
+                float: center;
+                font-size: 80%;
+                text-decoration: none;
+            }
+        }
+
+        img {
+            @media screen and (max-width: 900px) {
+                width: 100%;
+            }
+
+            @media screen and (max-width: 900px) and (orientation: landscape) {
+                width: 60%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1100px) and (orientation: landscape) {
+        margin-bottom: 10%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .favoriteCharacters {
+        .contenedor {
+            @include with-padding(90%, 3%);
+            font-size: 18px;
+            margin-top: 5%;
+            h1 {
+                font-size: 25px;
+            }
+
+            .cajitaComics{
+                padding-top: 2%;
+                padding-left: 2%;
+                width: 100%;
+
+                li {
+                    .comics {
+                        .comicButton {
+                            padding-top: 2%;
+                            padding-right: 2%;
+                            position: sticky;
+                            left: 90%;
+                        }
                     }
                 }
             }
         }
     }
-
-    .divLink {
-        margin-top: 2%;
-        .linkBack {
-            @extend %buttonFavoriteCharacters;
-            padding: 5px;
-            float: center;
-            font-size: 80%;
-            text-decoration: none;
-        }
-    }
-}
 }

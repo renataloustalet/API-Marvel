@@ -6,13 +6,10 @@ body {
     background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    height: 100%;
 
     .App {
         text-align: center;
-        height: 100%;
-        width: 100%;
-        color: $mainColor;
+        color: $yellow;
         font-size: 16pt;
         font-family: "komika Title - Kaps", arial;
         overflow-x: hidden;
@@ -22,4 +19,18 @@ body {
 @font-face {
     font-family: "komika Title - Kaps";
     src: url("../src/fonts/KOMTITK_.ttf") format("TrueType");
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: $lightBlack;
+    height: 80px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $darkRed;
+    border-radius: 20px;
 }

@@ -1,52 +1,26 @@
 @import "../sass/global.scss";
 @import "../sass/variables.scss";
 
-h2 {
-    padding: 200px;
-}
-
 .characterDetail {
     .loading {
         margin-right: auto;
         margin-left: auto;
         margin-top: 20%;
         width: 140px;
-
-        @media screen and (max-width: 700px) {
-            margin-top: 30%;
-            width: 110px;
-            height: 100px;
-        }
     }
-    
+
     .card {
-        @include bc-color($cardColor, $grey);
-        @include with-padding(90%, 90px);
+        @include bc-color($darkWhite, $grey);
+        @include with-padding(80%, 40px);
         @extend %margin-MarginBottom;
         @extend %borderRadius;
-        margin-top: 6%;
 
-        @media screen and (max-width: 700px) {
-            @include with-padding(80%, 20px);
-        }
-
-        @media screen and (min-width: 700px) and (max-width: 1500px) {
-            @include with-padding(95%, 20px);
-        }
-
-       button {
-             @extend %buttonDetail;
-             margin: 10px;
-
-            @media screen and (max-width: 700px) {
-                width: 40%;
+        .buttons {
+            button {
+                @extend %buttonDetail;
                 margin: 10px;
             }
-
-            @media screen and (min-width: 700px) and (max-width: 1500px) {
-                @include with-padding(20%, 1px);
-            }
-         }
+        }
 
         img {
             @include size(400px, 400px);
@@ -58,13 +32,102 @@ h2 {
             &:hover {
                 @extend %filterImage;
             }
+        }
+    }
 
-            @media screen and (max-width: 700px) {
-                @include size(90%, 90%);
+    .notFound {
+        @include flex(center, center, column);
+        button {
+            @extend %buttonFavoriteCharacters;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .characterDetail {
+        .loading {
+            margin-top: 30%;
+            @include size(110px, 100px);
+        }
+
+        .card {
+            @include with-padding(80%, 20px);
+
+            h1 {
+                font-size: 25px;
             }
 
-            @media screen and (min-width: 700px) and (max-width: 1500px) {
+            h4 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            img {
+                @include size(80%, 80%);
+            }
+
+            .buttons {
+                @include flex(center, center, column);
+                button {
+                    font-size: 15px;
+                    width: 60%;
+                }
+            }
+        }
+
+        .notFound {
+            margin-bottom: 1%;
+            img {
+                @include size(80%, 40%);
+            }
+
+            button {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1400px) {
+    .characterDetail {
+        .card {
+            @include with-padding(95%, 20px);
+
+            h1 {
+                font-size: 25px;
+            }
+
+            h4 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+            .buttons {
+                @include flex(center, center, column);
+
+                button {
+                    font-size: 15px;
+                    width: 60%;
+                }
+            }
+
+            img {
                 @include size(80%, 90%);
+            }
+        }
+
+        .notFound {
+            img {
+                @include size(60%, 50%);
+            }
+
+            button {
+                font-size: 15px;
             }
         }
     }

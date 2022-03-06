@@ -7,12 +7,6 @@
         margin-left: auto;
         margin-top: 20%;
         width: 140px;
-
-        @media screen and (max-width: 700px) {
-            margin-top: 30%;
-            width: 120px;
-            height: 100px;
-        }
     }
 
     .grid {
@@ -57,19 +51,45 @@
             display: inline;
             padding: 10px;
 
-            @include bc-color($colorLinkPagination, $white);
+            @include bc-color($darkRed, $white);
             text-decoration: none;
             padding: 8px 16px;
             border-radius: 3px;
             margin: 0 4px;
 
             &:hover:not(.active) {
-                @include bc-color($backgroundPagination, $black);
+                @include bc-color($darkRed, $black);
                 transition: 0.3s;
             }
 
             &.active {
-                @include bc-color($backgroundPagination, $black);
+                @include bc-color($darkRed, $black);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+.container {
+    width: 100px;
+    .grid {
+        .cuadrado {
+            @include size(310px, 310px);
+            p {
+                font-size: 25px;
+            }
+
+            .superhero {
+                @include size(70%, 69%);
+            }
+        }
+    }
+}
+
+    .pagination {
+        ul {
+            li {
+                font-size: 15px;
             }
         }
     }

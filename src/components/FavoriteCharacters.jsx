@@ -3,6 +3,7 @@ import { useSelector, connect } from 'react-redux'
 import '../styles/favoriteCharacters.scss'
 import { removeFavorite } from '../actions'
 import { Link } from 'react-router-dom'
+import nothingYet from '../assets/nothingYet.svg'
 
 function FavoriteCharacters(props) {
 
@@ -31,7 +32,7 @@ function FavoriteCharacters(props) {
                             </ul>
                         </div>
                     )
-                }) : <p>there is nothing yet</p>
+                }) : <img src={nothingYet} alt='spiderman'/>
                 }
                 <div className="divLink">
                     <Link to='/' className="linkBack">Back</Link>
