@@ -24,7 +24,7 @@ function CharacterDetail(props) {
 
     return (
         <div className='characterDetail'>
-            {loading && detail.length ? <img src={loadingImg} className='loading' alt='loading' /> : !loading && detail.length ?
+            {loading ? <img src={loadingImg} className='loading' alt='loading' /> :
                 <div>
                     <div className="card">
                         <div className="row align-items-center">
@@ -45,12 +45,12 @@ function CharacterDetail(props) {
                             </div>
                         </div>
                     </div>
-                </div> :
+                </div> /* :
                 !detail.length ?
                     <div className='notFound'>
                         <img src={notFound} alt='not found' />
                         <button onClick={backHome}>Back</button>
-                    </div> : <img src={loadingImg} className='loading' alt='loading' />
+                    </div> : <img src={loadingImg} className='loading' alt='loading' /> */
             }
         </div>
     )
