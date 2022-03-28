@@ -47,7 +47,7 @@
     .characterDetail {
         .loading {
             margin-top: 30%;
-            @include size(110px, 100px);
+            width: auto;
         }
 
         .card {

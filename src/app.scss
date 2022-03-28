@@ -20,17 +20,3 @@ body {
     font-family: "komika Title - Kaps";
     src: url("../src/fonts/KOMTITK_.ttf") format("TrueType");
 }
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: $lightBlack;
-    height: 80px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: $darkRed;
-    border-radius: 20px;
-}

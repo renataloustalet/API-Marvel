@@ -14,6 +14,7 @@
 
         .cuadrado {
             margin: auto;
+            display: block;
             @include size(390px, 410px);
             @include bc-color($white, $grey);
             border-radius: 5px;
@@ -35,6 +36,10 @@
                 }
             }
         }
+
+        .row{
+            --bs-gutter-x: 0;
+        }
     }
 }
 
@@ -51,7 +56,7 @@
             display: inline;
             padding: 10px;
 
-            @include bc-color($darkRed, $white);
+            @include bc-color($red, $white);
             text-decoration: none;
             padding: 8px 16px;
             border-radius: 3px;
@@ -71,7 +76,9 @@
 
 @media screen and (max-width: 700px) {
 .container {
-    width: 100px;
+    .loading {
+        width: auto;
+    }
     .grid {
         .cuadrado {
             @include size(310px, 310px);
