@@ -3,8 +3,10 @@
 ## Tecnologías utilizadas
 
 * Javascript
-* React - Redux
+* React
+* Redux
 * Bootstrap
+* SASS
 
 ## Previews
 
