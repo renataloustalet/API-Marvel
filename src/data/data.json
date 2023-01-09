@@ -1,0 +1,16 @@
+{
+    "NAVBAR": {
+        "SEARCH_BUTTON": "Search",
+        "FAVORITE_CHARACTERS": "My favorite Characters"
+    },
+    "FAVORITE_CHARACTERS": {
+        "TITLE": "My favorite characters",
+        "BUTTON_BACK": "Back"
+    },
+    "CHARACTER_DETAIL": {
+        "TITLE": "Comics",
+        "NOT_FOUND": "Comics not found",
+        "BUTTON_ADD": "Add",
+        "BUTTON_BACK": "Back"
+    }
+}

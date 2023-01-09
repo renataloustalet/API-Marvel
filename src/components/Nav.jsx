@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { getByName, getCharacters } from '../actions/index'
 import logo from '../assets/logo-marvel.png'
 import '../styles/nav.scss'
+import { NAVBAR } from "../data/data.json"
 
 function Nav() {
     const dispatch = useDispatch()
@@ -41,14 +42,14 @@ function Nav() {
                                 <ul className="navbar-nav mx-auto">
                                     <li className="nav-item">
                                         <Link to="/favoriteCharacters">
-                                            My favorite Characters
+                                            { NAVBAR.FAVORITE_CHARACTERS }
                                         </Link>
                                     </li>
                                 </ul>
                                 <form className="d-flex">
                                     <div className="input-group">
                                         <input className="form-control me-2" type="search" value={name} placeholder="Character name..." onChange={handleChange} />
-                                        <button className="btn btn-outline-success" type="submit" onClick={handleSubmit}>Search</button>
+                                        <button className="btn btn-outline-success" type="submit" onClick={handleSubmit}>{ NAVBAR.SEARCH_BUTTON }</button>
                                     </div>
                                 </form>
                             </div>
@@ -62,7 +63,7 @@ function Nav() {
                                     <ul className="navbar-nav mx-auto">
                                         <li className="nav-item">
                                             <Link to="/favoriteCharacters">
-                                                My favorite Characters
+                                                { NAVBAR.FAVORITE_CHARACTERS }
                                             </Link>
                                         </li>
                                     </ul>

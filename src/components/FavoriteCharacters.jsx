@@ -4,6 +4,7 @@ import '../styles/favoriteCharacters.scss'
 import { removeFavorite } from '../actions'
 import { Link } from 'react-router-dom'
 import nothingYet from '../assets/nothingYet.svg'
+import { FAVORITE_CHARACTERS } from "../data/data.json"
 
 function FavoriteCharacters(props) {
 
@@ -15,7 +16,7 @@ function FavoriteCharacters(props) {
         <div className='favoriteCharacters'>
             <div className="contenedor">
                 <div>
-                    <h1>My favorite characters</h1>
+                    <h1>{ FAVORITE_CHARACTERS.TITLE }</h1>
                 </div>
                 {filtrarRepetidos.length > 0 ? filtrarRepetidos.map(c => {
                     return (
@@ -35,7 +36,7 @@ function FavoriteCharacters(props) {
                 }) : <img src={nothingYet} alt='spiderman'/>
                 }
                 <div className="divLink">
-                    <Link to='/' className="linkBack">Back</Link>
+                    <Link to='/' className="linkBack">{ FAVORITE_CHARACTERS.BUTTON_BACK }</Link>
                 </div>
             </div>
         </div>
