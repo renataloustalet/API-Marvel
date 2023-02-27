@@ -5,8 +5,8 @@
     .loading {
         margin-right: auto;
         margin-left: auto;
+        width: 120px;
         margin-top: 20%;
-        width: 140px;
     }
 
     .card {
@@ -23,7 +23,7 @@
         }
 
         img {
-            @include size(400px, 400px);
+            @include size(370px, 370px);
             @extend %filterTransition;
             @extend %margin-MarginBottom;
             padding: 2%;
@@ -48,6 +48,9 @@
         .loading {
             margin-top: 30%;
             width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .card {

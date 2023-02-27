@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 import {
     GET_CHARACTERS,
@@ -7,9 +7,9 @@ import {
     ADD_FAVORITE,
     REMOVE_FAVORITE,
     LOADING
-} from './constantes'
+} from './constantes';
 
-const REACT_APP_URL = 'gateway.marvel.com:443/v1/public/characters'
+const REACT_APP_URL = 'gateway.marvel.com:443/v1/public/characters';
 
 export function getCharacters() {
     return async function (dispatch) {
@@ -26,14 +26,14 @@ export function getCharacters() {
                         name: el.name,
                         thumbnail: el.thumbnail,
                         comics: el.comics.items
-                    }
+                    };
                 })
-            })
+            });
         } catch (error) {
-            console.log(error)
-        }
-    }
-}
+            console.log(error);
+        };
+    };
+};
 
 export function getByName(name) {
     return async function (dispatch) {
@@ -42,12 +42,12 @@ export function getByName(name) {
             return dispatch({
                 type: GET_BY_NAME,
                 payload: res.data.data.results
-            })
+            });
         } catch (error) {
-            console.log(error)
-        }
-    }
-}
+            console.log(error);
+        };
+    };
+};
 
 export function getDetail(id) {
     return async function (dispatch) {
@@ -64,25 +64,25 @@ export function getDetail(id) {
                         name: e.name,
                         thumbnail: e.thumbnail,
                         comics: e.comics.items.map(e => e.name)
-                    }
+                    };
                 })
-            })
+            });
         } catch (error) {
-            console.log(error)
-        }
-    }
-}
+            console.log(error);
+        };
+    };
+};
 
 export function addFavorite(payload) {
     return {
         type: ADD_FAVORITE,
         payload
-    }
-}
+    };
+};
 
 export function removeFavorite(name) {
     return {
         type: REMOVE_FAVORITE,
         payload: name
-    }
-}
+    };
+};

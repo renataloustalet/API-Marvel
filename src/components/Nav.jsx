@@ -1,30 +1,30 @@
-import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { getByName, getCharacters } from '../actions/index'
-import logo from '../assets/logo-marvel.png'
-import '../styles/nav.scss'
-import { NAVBAR } from "../data/data.json"
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { getByName, getCharacters } from '../actions/index';
+import { NAVBAR } from "../assets/data/data.json";
+import logo from '../assets/logo-marvel.png';
+import '../styles/nav.scss';
 
 function Nav() {
-    const dispatch = useDispatch()
-    const location = useLocation()
+    const dispatch = useDispatch();
+    const location = useLocation();
 
-    const [name, setName] = useState('')
+    const [name, setName] = useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
-        dispatch(getByName(name))
-        setName('')
-    }
+        dispatch(getByName(name));
+        setName('');
+    };
 
     function handleChange(e) {
-        setName(e.target.value)
-    }
+        setName(e.target.value);
+    };
 
     function handleClick() {
-        dispatch(getCharacters())
-    }
+        dispatch(getCharacters());
+    };
 
     return (
         <div>
@@ -42,14 +42,14 @@ function Nav() {
                                 <ul className="navbar-nav mx-auto">
                                     <li className="nav-item">
                                         <Link to="/favoriteCharacters">
-                                            { NAVBAR.FAVORITE_CHARACTERS }
+                                            {NAVBAR.FAVORITE_CHARACTERS}
                                         </Link>
                                     </li>
                                 </ul>
                                 <form className="d-flex">
                                     <div className="input-group">
                                         <input className="form-control me-2" type="search" value={name} placeholder="Character name..." onChange={handleChange} />
-                                        <button className="btn btn-outline-success" type="submit" onClick={handleSubmit}>{ NAVBAR.SEARCH_BUTTON }</button>
+                                        <button className="btn btn-outline-success" type="submit" onClick={handleSubmit}>{NAVBAR.SEARCH_BUTTON}</button>
                                     </div>
                                 </form>
                             </div>
@@ -63,7 +63,7 @@ function Nav() {
                                     <ul className="navbar-nav mx-auto">
                                         <li className="nav-item">
                                             <Link to="/favoriteCharacters">
-                                                { NAVBAR.FAVORITE_CHARACTERS }
+                                                {NAVBAR.FAVORITE_CHARACTERS}
                                             </Link>
                                         </li>
                                     </ul>
@@ -73,7 +73,7 @@ function Nav() {
                 </div>
             </nav>
         </div>
-    )
-}
+    );
+};
 
 export default Nav;

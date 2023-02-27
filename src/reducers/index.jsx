@@ -5,14 +5,14 @@ import {
     ADD_FAVORITE,
     LOADING,
     REMOVE_FAVORITE
-} from '../actions/constantes'
+} from '../actions/constantes';
 
 const initialState = {
     characters: [],
     detail: [],
     favorites: [],
     loading: false
-}
+};
 
 function reducer(state = initialState, action) {
     switch (action.type) {
@@ -49,6 +49,6 @@ function reducer(state = initialState, action) {
             }
         default: return state;
     }
-}
+};
 
 export default reducer;

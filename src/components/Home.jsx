@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { getCharacters } from '../actions/index'
-import { Link } from 'react-router-dom'
-import loading from '../assets/loading.png'
-import '../styles/home.scss'
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCharacters } from '../actions/index';
+import { Link } from 'react-router-dom';
+import loading from '../assets/loading.png';
+import '../styles/home.scss';
 
 function renderData(data) {
     return (
-        <div>
             <div className="container">
                 <div className="row">
                     {data.length > 0 ? data?.map(e => {
@@ -23,15 +22,14 @@ function renderData(data) {
                         )
                     }) : <img src={loading} className='loading' alt='loading' />}
                 </div>
-            </div>
         </div>
     )
 };
 
 function Home() {
 
-    const dispatch = useDispatch()
-    const data = useSelector(state => state.characters)
+    const dispatch = useDispatch();
+    const data = useSelector(state => state.characters);
     const [currentPage, setcurrentPage] = useState(1);
     const [itemsPerPage, setitemsPerPage] = useState(6);
 
@@ -41,8 +39,8 @@ function Home() {
 
 
     useEffect(() => {
-        dispatch(getCharacters())
-    }, [dispatch])
+        dispatch(getCharacters());
+    }, [dispatch]);
 
     const handleClick = (event) => {
         setcurrentPage(Number(event.target.id));
@@ -51,7 +49,7 @@ function Home() {
     const pages = [];
     for (let i = 1; i <= Math.ceil(data.length / itemsPerPage); i++) {
         pages.push(i);
-    }
+    };
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -70,7 +68,7 @@ function Home() {
             );
         } else {
             return null;
-        }
+        };
     });
 
     function handleNextbtn() {
@@ -79,7 +77,7 @@ function Home() {
         if (currentPage + 1 > maxPageNumberLimit) {
             setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
             setminPageNumberLimit(minPageNumberLimit + pageNumberLimit);
-        }
+        };
     };
 
     function handlePrevbtn() {
@@ -88,18 +86,18 @@ function Home() {
         if ((currentPage - 1) % pageNumberLimit === 0) {
             setmaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
             setminPageNumberLimit(minPageNumberLimit - pageNumberLimit);
-        }
+        };
     };
 
     let pageIncrementBtn = null;
     if (pages.length > maxPageNumberLimit) {
         pageIncrementBtn = <li onClick={handleNextbtn}> &gt; </li>;
-    }
+    };
 
     let pageDecrementBtn = null;
     if (minPageNumberLimit >= 1) {
         pageDecrementBtn = <li onClick={handlePrevbtn}> &lt; </li>;
-    }
+    };
 
     return (
         <div>
@@ -113,7 +111,7 @@ function Home() {
             </div>
         </div>
     );
-}
+};
 
 
 export default Home;

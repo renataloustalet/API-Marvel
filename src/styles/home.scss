@@ -5,8 +5,8 @@
     .loading {
         margin-right: auto;
         margin-left: auto;
+        width: 120px;
         margin-top: 20%;
-        width: 140px;
     }
 
     .grid {
@@ -15,7 +15,7 @@
         .cuadrado {
             margin: auto;
             display: block;
-            @include size(390px, 410px);
+            @include size(380px, 380px);
             @include bc-color($white, $grey);
             border-radius: 5px;
             text-align: center;
@@ -25,7 +25,7 @@
             }
 
             .superhero {
-                @include size(300px, 300px);
+                @include size(280px, 280px);
                 @extend %filterTransition;
                 align-items: center;
                 margin: auto;
@@ -46,7 +46,6 @@
 .pagination {
     display: flex;
     justify-content: center;
-    cursor: pointer;
 
     ul {
         padding: 0;
@@ -55,8 +54,9 @@
         li {
             display: inline;
             padding: 10px;
+            cursor: pointer;
 
-            @include bc-color($red, $white);
+            @include bc-color($lightRed, $white);
             text-decoration: none;
             padding: 8px 16px;
             border-radius: 3px;

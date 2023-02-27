@@ -2,18 +2,16 @@ import React, { useEffect } from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { addFavorite, getDetail } from '../actions/index';
 import { useHistory } from 'react-router-dom';
-import loadingImg from '../assets/loading.png';
-import notFound from '../assets/notFound.png';
-import '../styles/characterDetail.scss';
+import { CHARACTER_DETAIL } from "../assets/data/data.json";
 import Swal from 'sweetalert2';
-import { CHARACTER_DETAIL } from "../data/data.json";
+import loadingImg from '../assets/loading.png';
+import '../styles/characterDetail.scss';
 
 function CharacterDetail(props) {
-
     const dispatch = useDispatch();
     const history = useHistory();
-    const detail = useSelector(state => state.detail)
-    const loading = useSelector(state => state.loading)
+    const detail = useSelector(state => state.detail);
+    const loading = useSelector(state => state.loading);
 
     const backHome = () => {
         history.push('/')
@@ -35,23 +33,18 @@ function CharacterDetail(props) {
                             </div>
                             <div className="col-md-8">
                                 <div className="card-body">
-                                    <h4>{ CHARACTER_DETAIL.TITLE }</h4>
+                                    <h4>{CHARACTER_DETAIL.TITLE}</h4>
                                     <hr></hr>
-                                    <p>{detail[0].comics.length > 0 ? detail[0].comics : <p>{ CHARACTER_DETAIL.NOT_FOUND }</p>}</p>
+                                    <p>{detail[0].comics.length > 0 ? detail[0].comics : <p>{CHARACTER_DETAIL.NOT_FOUND}</p>}</p>
                                 </div>
                                 <div className='buttons'>
-                                    <button onClick={backHome} className="back">{ CHARACTER_DETAIL.BUTTON_BACK }</button>
-                                    <button onClick={() => props.addFavorite({ name: detail[0].name, id: detail[0].id }, Swal.fire({ title: "Added to favorites successfully", confirmButtonColor: 'grey' }))} type="button">{ CHARACTER_DETAIL.BUTTON_ADD }</button>
+                                    <button onClick={backHome} className="back">{CHARACTER_DETAIL.BUTTON_BACK}</button>
+                                    <button onClick={() => props.addFavorite({ name: detail[0].name, id: detail[0].id }, Swal.fire({ title: "Added to favorites successfully", confirmButtonColor: 'grey' }))} type="button">{CHARACTER_DETAIL.BUTTON_ADD}</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> /* :
-                !detail.length ?
-                    <div className='notFound'>
-                        <img src={notFound} alt='not found' />
-                        <button onClick={backHome}>Back</button>
-                    </div> : <img src={loadingImg} className='loading' alt='loading' /> */
+                </div>
             }
         </div>
     )
