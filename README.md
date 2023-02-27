@@ -8,13 +8,10 @@
 * Bootstrap
 * SASS
 
-## Previews
+<div align="center">
 
-<img src="./Home.png" />
+## Preview
 
-<img src="./Details.png"/>
+![Marvel](https://user-images.githubusercontent.com/79423391/221464418-34d65f39-ffa7-4ec6-991d-43807f78e5f7.gif)
 
-<img src="./Search.png"/>
-
-<img src="./FavoriteCharacters.png"/>
-
+</div>
